@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saroj ❤️ Archana</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #ff0844, #ffb199, #8e44ad);
+    overflow: hidden;
+}
+
+.card {
+    padding: 30px 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.16);
+    box-shadow: 0 0 30px rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff0844;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#message {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    animation: float 7s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>❤️ Saroj ❤️</h1>
+    <h2>With Archana 💖</h2>
+
+    <p>A Beautiful Story 💕</p>
+
+    <button onclick="showLove()">Click Here ❤️</button>
+
+    <div id="message">
+        Saroj ❤️ Archana<br>
+        You Are Special! 💖🥰
+    </div>
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("message").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 350);
+</script>
+
+</body>
+</html>
